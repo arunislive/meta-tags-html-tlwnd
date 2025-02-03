@@ -1,33 +1,55 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8"/>
+    <meta
+            name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>Meta tags generator</title>
-    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link
+            href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+            rel="stylesheet"
+    />
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-<div class="root m-0 p-0 box-border bg-blue-500 min-h-screen ">
+<div class="wrapper min-h-[100vh] max-w-screen-xl mx-auto px-[16px] py-[10]">
 
-    <!--header start-->
-    <div class="header flex flex-col">
-        <div class="header flex items-center justify-between  text-black z-4 m-[24px] bg-yellow-500 w-full h-[10vh]">
-            <div class="wrapper m-5 flex justify-between h-full w-full">
-                <a href="" class="logo text-2xl font-bold">Meta Tags</a>
-                <div class="navLinks flex items-center">
-                    <a href="#"  class="text-xl ">Font Generator</a>
-
+    <div class="root m-0 p-0 box-border bg-[#FEEDED]">
+        <!--header start-->
+        <div class="header flex flex-col">
+            <div
+                    class="header flex items-center justify-between text-black z-4 m-[24px] bg-yellow-500 w-full h-[10vh]"
+            >
+                <div class="wrapper m-5 flex justify-between h-full w-full">
+                    <a href="" class="logo text-2xl font-bold">Meta Tags</a>
+                    <div class="navLinks flex items-center">
+                        <a href="#" class="text-">Font Generator</a>
+                    </div>
                 </div>
-
             </div>
         </div>
-    </div>
-    <!--header end-->
+        <!--header end-->
+        <!-- hero start -->
+        <section class="hero flex flex-col justify-center items-center   p-2 h-[10vh]">
+            <h1 class="text-4xl font-bold">Meta Tags Toolkit</h1>
+            <p class="text-[10px]">Preview, Edit, and Generate</p>
+            <form action="">
+                <div class="flex flex-row justify-center items-center gap-3 mb-2 mt-2">
+                    <input type="text" class="meta-search-bar p-2 flex grow rounded-lg border border-red-500"
+                           placeholder="https://metatags.io/">
+                    <input type="submit" value=" Parse Meta Data"
+                           class="meta-search bg-gray-50 border border-yellow-200 rounded-lg p-2 ">
 
+                </div>
+            </form>
+        </section>
+        <!--hero end-->
+
+    </div>
 </div>
 </body>
 </html>

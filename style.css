@@ -5,36 +5,53 @@
 @layer base {
     :root {
         --primary-color: #9333ea;
-        --secondary-color:  #FDECEB;
-        --tertiary-color:  #E11C48;
+        --secondary-color: #FDECEB;
+        --tertiary-color: #E11C48;
         --font-main: system-ui, sans-serif;
     }
 
 }
-    body {
-        font-family: var(--font-main);
-    }
 
-    .navLinks a{
-        color: var(--tertiary-color);
-        text-decoration: none;
-    }
+body {
+    font-family: var(--font-main);
+}
 
-    .navLinks a::after {
-        content: "";
-        display: none;
-        height: 0;
-        width: 0;
-        background-color: var(--tertiary-color);
-        transition: width 0.4s;
-    }
-    .navLinks a:hover a::after {
-        content: "";
-        display: block;
-        height: 5px;
-        width: 50px;
-        background-color: blue;
-    }
+.navLinks a {
+    color: var(--tertiary-color);
+    text-decoration: none;
+}
+
+.navLinks a::after {
+    content: "";
+    display: none;
+    height: 0;
+    width: 0;
+    background-color: var(--tertiary-color);
+    transition: width 0.4s;
+}
+
+.navLinks a:hover a::after {
+    content: "";
+    display: block;
+    height: 5px;
+    width: 50px;
+    background-color: blue;
+}
+
+.meta-search-bar {
+    outline: none;
+    background:transparent;
+}
+.meta-search-bar:placeholder-shown {
+    color: blue;
+}
+
+.meta-search {
+    color: var(--tertiary-color);
+    background: transparent;
+    border: 1px solid var(--tertiary-color);
+}
+
 
 @layer components {
     .btn-primary {
