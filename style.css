@@ -14,50 +14,8 @@
 
 body {
     font-family: var(--font-main);
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-.navLinks a {
-    color: var(--tertiary-color);
-    text-decoration: none;
-}
-
-.navLinks a::after {
-    content: "";
-    display: none;
-    height: 0;
-    width: 0;
-    background-color: var(--tertiary-color);
-    transition: width 0.4s;
-}
-
-.navLinks a:hover a::after {
-    content: "";
-    display: block;
-    height: 5px;
-    width: 50px;
-    background-color: blue;
-}
-
-.meta-search-bar {
-    outline: none;
-    background:transparent;
-}
-.meta-search-bar:placeholder-shown {
-    color: blue;
-}
-
-.meta-search {
-    color: var(--tertiary-color);
-    background: transparent;
-    border: 1px solid var(--tertiary-color);
-}
-
-
-@layer components {
-    .btn-primary {
-        background-color: var(--primary-color);
-        color: white;
-        padding: 0.5rem 1rem;
-        border-radius: 0.5rem;
-    }
-}
