@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Interaction</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 relative">
+
+<!-- 🌟 Header with Navigation -->
+<header class="bg-blue-600 text-white py-4 px-10 fixed w-full top-0 shadow-lg z-50">
+    <nav class="flex justify-between items-center">
+        <h1 class="text-2xl font-bold">My Website</h1>
+        <ul class="flex gap-6">
+            <li><a href="#" class="hover:underline">Home</a></li>
+            <li><a href="#" class="hover:underline">About</a></li>
+            <li><a href="#" class="hover:underline">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- 🏠 Main Content Section -->
+<main class="flex px-10 pt-24 pb-20 relative z-10">
+    <!-- Left (Smaller) Section -->
+    <section class="w-1/3 pr-4">
+        <div id="leftSection" class="bg-white p-6 shadow-lg rounded-lg sticky top-20 h-[110vh] transition-all duration-500">
+            <h2 class="text-xl font-bold">Left Section</h2>
+            <p class="text-gray-600">I stay fixed until the right section fully scrolls.</p>
+        </div>
+    </section>
+
+    <!-- Right (Larger) Section -->
+    <section class="w-2/3">
+        <div id="rightSection" class="bg-white p-6 shadow-lg rounded-lg">
+            <h2 class="text-2xl font-bold">Right Section</h2>
+            <p class="text-gray-600">This section scrolls first.</p>
+
+            <!-- Simulated long content -->
+            <div class="h-[160vh] bg-gray-200 mt-6 rounded-lg"></div>
+        </div>
+    </section>
+</main>
+
+<!-- ✨ Additional Sections Below -->
+<section class="bg-white p-10 text-center shadow-lg relative z-20">
+    <h2 class="text-2xl font-bold">Next Section</h2>
+    <p class="text-gray-600">This section appears after the main content.</p>
+</section>
+
+<section class="bg-gray-300 p-10 text-center mt-6 shadow-lg relative z-30">
+    <h2 class="text-2xl font-bold">Final Section</h2>
+    <p class="text-gray-700">This is the last section of the page.</p>
+</section>
+
+<script>
+    const leftSection = document.getElementById("leftSection");
+    const rightSection = document.getElementById("rightSection");
+
+    window.addEventListener("scroll", () => {
+        const rightBottom = rightSection.getBoundingClientRect().bottom;
+        const windowHeight = window.innerHeight;
+
+        // When the bottom of the large section is near the bottom of the viewport
+        if (rightBottom <= windowHeight) {
+            const offset = windowHeight - rightBottom;
+            leftSection.style.position = "absolute";
+            leftSection.style.bottom = `${offset}px`; // Stick the small section to the bottom of large section
+        } else {
+            leftSection.style.position = "sticky";
+            leftSection.style.top = "5rem"; // Keep it in place when scrolling upwards
+        }
+    });
+</script>
+
+</body>
+</html>
